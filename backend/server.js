@@ -5,9 +5,12 @@ import cors from 'cors';
 import colors from 'colors'
 import { createServer } from 'http';
 import { errorHandler, notFound } from './middlewares/errorMiddleware.js';
+import { connectDB } from './db/connectDB.js';
 
 
 dotenv.config();
+
+connectDB()
 
 const app= express();
 app.use(cors());

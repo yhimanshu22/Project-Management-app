@@ -1,17 +1,17 @@
 import mongoose from "mongoose";
+import colors from 'colors';
 
-const connectDB = async () =>{
+const DB_NAME = 'project-management';
+
+
+const connectDB = async()=>{
     try {
-        const conn = await mongoose.connect(process.env.MONGODB_URL,{
-            useUnifiedTopology:true,
-            useNewUrlParser:true,
-            useCreateIndex:true,
-            useFindAndModify:false,
-        })
-        console.log(`mongodb connect :${conn.connection.host}`);
-        
+        const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URL}${DB_NAME}`);
+        console.log(`MongoDB connected !! DB HOST: ${connectionInstance.connection.host}`.bgCyan);
     } catch (error) {
-        console.error(`Error:${err.message}`);
+        console.log('MONGODB connection failed',error);
         process.exit(1);
     }
 }
+
+export {connectDB}
