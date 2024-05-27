@@ -338,4 +338,4 @@ const updateProjectBackgroundColor = asyncHandler(async(req,res)=>{
     res.status(200)
 })
 
-export {authUser,registerUser,confirmEmail,resendEmail,getUserByNameOrEmail,getUserData,markNotification,getNotification,discardNotification,updateProjectBackgroundColor,updateProjectBackgroundColor}
+export {authUser,registerUser,confirmEmail,resendEmail,getUserByNameOrEmail,getUserData,markNotification,getNotification,discardNotification,updateProjectColorTheme,updateProjectBackgroundColor}
