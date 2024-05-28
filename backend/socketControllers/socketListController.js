@@ -1,8 +1,7 @@
-import Task from "../models/task.model";
-import list from "../models/list.model";
+import Task from "../models/task.model.js";
+import list from "../models/list.model.js";
 import mongoose from "mongoose";
 import { populateLists } from "../utils/utilFunctions";
-import { socket } from "../socket";
 
 export const socketListController = (io,socket)=>{
     //@desc  create new list
